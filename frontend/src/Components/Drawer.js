@@ -8,10 +8,14 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import IconButton from '@material-ui/core/IconButton';
 import ListIcon from '@material-ui/icons/List';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
+import FilterHdrIcon from '@material-ui/icons/FilterHdr';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import FolderSpecialIcon from '@material-ui/icons/FolderSpecial';
 
 const useStyles = makeStyles({
   list: {
@@ -35,7 +39,7 @@ export default function TemporaryDrawer() {
 
     setState({ ...state, [anchor]: open });
   };
-
+  const icon = [<EmojiPeopleIcon/>, <FastfoodIcon/>, <SportsEsportsIcon/>, <FilterHdrIcon/>, <FolderSpecialIcon/>, <AddCircleOutlineIcon/>]
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -46,18 +50,9 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Let\'s Meet!!', 'Food', 'Game', 'Travel', 'Other'].map((text, index) => (
+        {['Let\'s Meet!!', 'Food', 'Game', 'Travel', 'Good Memory' ,'Other'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon>{icon[index]}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}

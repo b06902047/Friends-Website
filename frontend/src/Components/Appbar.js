@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   font: {
-    marginTop: '15%',
+    marginTop: '20%',
     fontFamily: 'fantasy',
     fontStyle: 'normal',
     fontDisplay: 'swap',
@@ -49,13 +49,12 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonAppBar(props) {
   const classes = useStyles();
   const [count, setCount] = useState(0)
-  const username = "All";
+  const loggedIn = true;
   return (
     <div className={classes.root}>
       <AppBar position="static" style={{ background: '#ff9800' }}>
         <Toolbar>
-        <MyDrawer></MyDrawer>
-          
+          <MyDrawer></MyDrawer>
           <Grid container className={classes.root}>
                   <Grid item xs={4}>
                     <h3 className={classes.title}>
@@ -72,14 +71,13 @@ export default function ButtonAppBar(props) {
                     <h4 className={classes.font}>Calender</h4>
                   </Grid>
                   <Grid item xs={2}>
-                    {props.loggedIn===false?
-                      <h4 className={classes.font}>Login</h4>
-                      :<h4 className={classes.font}>{username}</h4>
+                    {loggedIn===true?
+                      <h4 className={classes.font}>Logout</h4>
+                      :<h4 className={classes.font}>{props.username}</h4>
                     }
                   </Grid>
           </Grid>
         </Toolbar>
-        
       </AppBar>
     </div>
   );
