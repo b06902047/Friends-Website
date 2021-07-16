@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Login from "./Login.js"
+import Login from "../Components/Login.js"
 
 const useStyles = makeStyles((theme) => ({
   background: {

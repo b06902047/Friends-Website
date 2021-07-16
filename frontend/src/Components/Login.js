@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 20,
     },
     button:{
-        marginTop: '20%',
+        marginTop: '10%',
         variant: "outlined",
         fontFamily: 'fantasy',
         fontStyle: 'normal',
@@ -81,6 +81,7 @@ export default function Login(props){
             <InputLabel className={classes.input_label}>PASSWORD</InputLabel>
             <TextField className={classes.input} value={password} type="password" onChange={handlePasswordInputChange}/>
             <Button type="submit" className={classes.button} onClick={handleLoginFormSubmit}> LOGIN </Button>
+            <Button type="submit" className={classes.button} onClick={handleLoginFormSubmit}> Register </Button>
         </Paper>
     );
 }

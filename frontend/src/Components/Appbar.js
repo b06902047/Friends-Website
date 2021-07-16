@@ -62,13 +62,13 @@ export default function ButtonAppBar(props) {
                     </h3>
                   </Grid>
                   <Grid item xs={2}>
-                    <h4 className={classes.font}>Home</h4>
+                    <h4 className={classes.font}>{props.linkHome}</h4>
                   </Grid>
                   <Grid item xs={2}>
-                    <h4 className={classes.font}>Chat</h4>
+                    <h4 className={classes.font}>{props.linkChat}</h4>
                   </Grid>
                   <Grid item xs={2}>
-                    <h4 className={classes.font}>Calender</h4>
+                    <h4 className={classes.font}>{props.linkCalendar}</h4>
                   </Grid>
                   <Grid item xs={2}>
                     {loggedIn===true?

@@ -16,8 +16,12 @@ import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import FilterHdrIcon from '@material-ui/icons/FilterHdr';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import FolderSpecialIcon from '@material-ui/icons/FolderSpecial';
+import { AppBar } from '@material-ui/core';
 
 const useStyles = makeStyles({
+  bar: {
+    width: 250,
+  },
   list: {
     width: 250,
   },
@@ -39,7 +43,7 @@ export default function TemporaryDrawer() {
 
     setState({ ...state, [anchor]: open });
   };
-  const icon = [<EmojiPeopleIcon/>, <FastfoodIcon/>, <SportsEsportsIcon/>, <FilterHdrIcon/>, <FolderSpecialIcon/>, <AddCircleOutlineIcon/>]
+  const icon = [<EmojiPeopleIcon/>, <SportsEsportsIcon/>, <FilterHdrIcon/>, <FolderSpecialIcon/>, <AddCircleOutlineIcon/>]
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -50,7 +54,7 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Let\'s Meet!!', 'Food', 'Game', 'Travel', 'Good Memory' ,'Other'].map((text, index) => (
+        {['Let\'s Meet!!', 'Poster', 'Good Memory' , 'Personal Space', 'Other'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{icon[index]}</ListItemIcon>
             <ListItemText primary={text} />
@@ -68,6 +72,7 @@ export default function TemporaryDrawer() {
             <ListIcon />
           </IconButton>
           <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+            <AppBar position="static" style={{ background: '#ff9800' }} className={classes.bar}>Hi</AppBar>
             {list(anchor)}
           </Drawer>
         </React.Fragment>
